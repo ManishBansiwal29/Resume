@@ -1,62 +1,125 @@
 body {
-  background: #17181d;
-  color: #ecf0f1;
-  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #dbe2ef;
+  color: #22223b;
 }
-.container {
+.hero {
+  position: relative;
+  min-height: 450px;
+  background: url('background.jpg') center/cover no-repeat;
+  filter: blur(0.5px);
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(30,34,43,0.6);
+  z-index: 1;
+}
+nav {
+  z-index: 2;
+  position: absolute; top: 24px; left:0; right:0;
+  display: flex; justify-content: space-between; padding: 0 50px;
+}
+nav a {
+  color: #eef;
+  text-decoration: none;
+  padding: 10px 32px;
+  font-weight: 500;
+  border: 1px solid #eef;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+  background: #fff;
+  color: #222;
+}
+.hero-content {
+  z-index: 2;
+  position: relative; text-align: center;
+  padding: 95px 0 45px 0;
+}
+.hero-content h1 {
+  font-size: 2.9em; color: #fff; font-weight: bold; margin-bottom: 7px;
+}
+.hero-content h2 { color: #bfc6d0; font-size: 1.5em; font-weight: 400;}
+.profile-img {
+  width: 120px; height: 120px;
+  object-fit: cover;
+  border: 7px solid #fff;
+  border-radius: 50%;
+  margin: 30px auto 10px auto;
+  display: block;
+}
+.hero-btn {
+  margin-top: 16px;
+  display: inline-block;
+  padding: 10px 38px;
+  background: transparent;
+  color: #fff; border: 2px solid #fff; border-radius:2px;
+  font-size: 1em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.hero-btn:hover {
+  background: #fff; color: #222;
+}
+
+.section {
+  margin: 60px auto;
+  background: #eaf0fa;
+  padding: 44px;
+  border-radius: 16px;
+  max-width: 1040px;
+  box-shadow: 0 3px 24px rgba(30,34,43,.07);
+}
+.section h2 {
+  font-size: 2em; letter-spacing: .04em; margin-bottom: 9px;
+  color: #1f2235;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.skills-grid {
   display: flex;
-  flex-direction: row;
-  max-width: 1000px;
-  margin: 40px auto;
-  background: #23242a;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px #2226;
+  flex-wrap: wrap; gap: 16px; font-size: 1.13em; margin-top: 16px;
 }
-aside {
-  width: 320px;
-  background: #17181d;
-  padding: 32px 18px;
-  border-right: 2px solid #222;
-  text-align: center;
+.skills-grid span {
+  background: #22223b;
+  color: #fff; padding: 12px 19px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px #2222;
 }
-.photo {
-  width: 110px;
-  height: 110px;
-  border-radius: 55px;
-  background: linear-gradient(135deg, #213, #4b8);
-  margin: 0 auto 22px;
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
 }
-aside h1 { color: #10c7ac; margin: 15px 0 3px;}
-aside h2 { color: #eb1947; margin: 27px 0 13px; }
-aside a { color: #10c7ac; text-decoration: none; }
-.contact { margin: 18px 0; padding: 0; list-style: none;}
-.contact li { margin: 7px 0; }
-
-main {
-  flex: 1;
-  padding: 40px 38px;
+.quick-id { background: #3c4a6d; color: #fff; border-radius: 12px; padding: 32px;}
+.quick-id a { color: #fa5a5a; text-decoration: underline;}
+.contact-form { background: #eaf0fa; padding:32px; border-radius:12px;}
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 10px; width: 47%; font-size: 1em;
+  border: 1px solid #3c4a6d; border-radius: 5px;
 }
-section {
-  margin-bottom: 38px;
+.contact-form textarea { width: 100%; min-height: 68px; }
+.contact-form button {
+  margin-top: 7px;
+  background: #fa5a5a; color: #fff;
+  border: none; padding: 12px 34px;
+  border-radius: 5px; font-size: 1.09em; cursor: pointer;
 }
-.item {
-  background: rgba(24,24,28,0.6);
-  margin-bottom: 19px;
-  padding: 11px 17px;
-  border-left: 5px solid #eb1947;
-  border-radius: 5px;
+.chat-btn {
+  position: fixed; bottom: 16px; right: 24px;
+  background: #fa5a5a;
+  color: #fff; font-size: 1.17em;
+  padding: 16px 38px; border-radius: 6px;
+  font-weight: bold; text-decoration: none; box-shadow: 0 2px 12px #8005;
 }
-.date {
-  float: right;
-  color: #10c7ac;
-  font-size: 0.95em;
-}
-
-/* Responsive */
-@media (max-width: 700px){
-  .container { flex-direction: column;}
-  aside, main { width: 100%; border: none;}
-  main { padding: 18px; }
+@media (max-width:900px) {
+  .exp-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
