@@ -8,60 +8,59 @@
 </head>
 <body>
   <header class="hero">
-    <div class="hero-content">
+    <div class="hero-content scroll-reveal">
       <h1>Manish Bansiwal</h1>
       <h2>Data Scientist | Mahindra Finance</h2>
-      <img src="WhatsApp Image 2025-09-08 at 17.45.24_61761cfb.jpg" alt="Profile" class="profile-img"/>
-      <a href="https://drive.google.com/file/d/1hkdTYeXFrYz1W4G0CTBzF0t3LoTcFldR/view?usp=sharing" class="hero-btn" download>DOWNLOAD MY FULL RESUME</a>
+      <img src="WhatsApp Image 2025-09-08 at 17.45.24_61761cfb.jpg" alt="Profile" class="profile-img scroll-reveal"/>
+      <a href="https://drive.google.com/file/d/1hkdTYeXFrYz1W4G0CTBzF0t3LoTcFldR/view?usp=sharing" class="hero-btn scroll-reveal" download>DOWNLOAD MY FULL RESUME</a>
     </div>
   </header>
-  
   <main>
-    <section class="section education" id="education">
-      <h2>EDUCATION</h2>
-      <div>
+    <section class="section education scroll-reveal" id="education">
+      <h2 class="scroll-reveal">EDUCATION</h2>
+      <div class="scroll-reveal">
         <strong>M.Tech (AR/VR), IIT Jodhpur</strong> <span>2023-2025</span> (CGPA: 8.88)<br/>
         <strong>B.Tech (CSE), SGVU Jaipur</strong> <span>2019-2023</span> (CGPA: 8.64)
       </div>
     </section>
-    <section class="section experience" id="experience">
-      <h2>EXPERIENCE</h2>
+    <section class="section experience scroll-reveal" id="experience">
+      <h2 class="scroll-reveal">EXPERIENCE</h2>
       <div class="exp-grid">
-        <div>
+        <div class="scroll-reveal">
           <strong>Data Scientist, Mahindra Finance</strong><br/>
           <span>June 2025 - Current, Mumbai</span><br/>
           <p>Developed <b>Azure Databricks</b> data pipelines, optimized PySpark workflow, deployed ML risk classification.</p>
         </div>
-        <div>
+        <div class="scroll-reveal">
           <strong>Software Developer Intern, Felicity</strong><br/>
           <span>Apr 2022 - Aug 2022, Jaipur</span><br/>
           <p>Implemented ngx-lottie, resolved database concurrency issues.</p>
         </div>
-        <div>
+        <div class="scroll-reveal">
           <strong>Android App Developer Intern, Lieko Technologies</strong><br/>
           <span>Nov 2020 - Apr 2021, Remote</span><br/>
           <p>Built Android attendance app with geolocation & geo-fencing.</p>
         </div>
       </div>
     </section>
-    <section class="section skills" id="skills">
-      <h2>SKILLS</h2>
+    <section class="section skills scroll-reveal" id="skills">
+      <h2 class="scroll-reveal">SKILLS</h2>
       <div class="skills-grid">
-        <span>Python</span>
-        <span>PySpark</span>
-        <span>SQL</span>
-        <span>React JS</span>
-        <span>Node JS</span>
-        <span>MongoDB</span>
-        <span>Azure Databricks</span>
-        <span>Jupyter Notebook</span>
-        <span>GitHub</span>
+        <span class="scroll-reveal">Python</span>
+        <span class="scroll-reveal">PySpark</span>
+        <span class="scroll-reveal">SQL</span>
+        <span class="scroll-reveal">React JS</span>
+        <span class="scroll-reveal">Node JS</span>
+        <span class="scroll-reveal">MongoDB</span>
+        <span class="scroll-reveal">Azure Databricks</span>
+        <span class="scroll-reveal">Jupyter Notebook</span>
+        <span class="scroll-reveal">GitHub</span>
       </div>
     </section>
-    <section class="section contact" id="contact">
+    <section class="section contact scroll-reveal" id="contact">
       <div class="contact-grid">
-        <div class="quick-id">
-          <h2>QUICK ID</h2>
+        <div class="quick-id scroll-reveal">
+          <h2 class="scroll-reveal">QUICK ID</h2>
           <p><b>Phone:</b> +91-9928005764</p>
           <p><b>Email:</b> manishbansiwal29@gmail.com</p>
           <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/manishbansiwal29">manishbansiwal29</a></p>
@@ -69,7 +68,20 @@
         </div>
       </div>
     </section>
-    <a href="mailto:manishbansiwal29@gmail.com" class="chat-btn">Let's Chat!</a>
+    <a href="mailto:manishbansiwal29@gmail.com" class="chat-btn scroll-reveal">Let's Chat!</a>
   </main>
+<script>
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    for (const el of reveals) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 70) {
+        el.classList.add('visible');
+      }
+    }
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
 </body>
 </html>
