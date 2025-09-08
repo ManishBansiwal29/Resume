@@ -1,203 +1,228 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #dbe2ef;
+  background: linear-gradient(135deg, #dbe2ef 0%, #eaf0fa 100%);
   color: #22223b;
+  transition: background 1s;
 }
 .hero {
   position: relative;
-  min-height: 450px;
+  min-height: 470px;
   background: url('background.jpg') center/cover no-repeat;
   filter: blur(0.5px);
+  box-shadow: 0 6px 40px #00224422;
 }
 .hero:before {
   content: "";
   position: absolute;
   top:0; left:0; right:0; bottom:0;
-  background: rgba(30,34,43,0.6);
+  background: rgba(30,34,43,0.65);
   z-index: 1;
-}
-nav {
-  z-index: 2;
-  position: absolute; top: 24px; left:0; right:0;
-  display: flex; justify-content: space-between; padding: 0 50px;
-}
-nav a {
-  color: #eef;
-  text-decoration: none;
-  padding: 10px 32px;
-  font-weight: 500;
-  border: 1px solid #eef;
-  border-radius: 2px;
-  transition: background 0.2s, color 0.2s;
-}
-nav a:hover {
-  background: #fff;
-  color: #222;
 }
 .hero-content {
   z-index: 2;
   position: relative; text-align: center;
-  padding: 95px 0 45px 0;
+  padding: 100px 0 40px 0;
   animation: fadeInDown 1.2s ease both;
 }
 @keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  0% {opacity: 0; transform: translateY(-30px) scale(0.97);}
+  100% {opacity: 1; transform: translateY(0) scale(1);}
 }
 .hero-content h1 {
-  font-size: 2.9em; color: #fff; font-weight: bold; margin-bottom: 7px;
+  font-size: 3em; color: #fff; font-weight: bold; margin-bottom: 6px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 18px #3c4a6d99;
+  animation: fadeTextIn 1.5s cubic-bezier(.64,.36,.03,1) both;
 }
-.hero-content h2 { color: #bfc6d0; font-size: 1.5em; font-weight: 400; }
+@keyframes fadeTextIn {
+  0% {opacity: 0; letter-spacing: 18px;}
+  100% {opacity: 1; letter-spacing: 1px;}
+}
+.hero-content h2 {
+  color: #bfc6d0; font-size: 1.5em; font-weight: 400; margin-top: 8px;
+  text-shadow: 0 1px 8px #14214560;
+  animation: fadeTextIn 2s;
+}
 .profile-img {
-  width: 120px; height: 120px;
+  width: 130px; height: 130px;
   object-fit: cover;
   border: 7px solid #fff;
   border-radius: 50%;
-  margin: 30px auto 10px auto;
+  margin: 25px auto 8px auto;
+  box-shadow: 0 3px 20px #22223b44, 0 0 0 8px #fa5a5a22;
   display: block;
+  animation: bounceIn 1.2s cubic-bezier(.64,.36,.03,1);
 }
 .hero-btn {
-  margin-top: 16px;
+  margin-top: 22px;
   display: inline-block;
-  padding: 10px 38px;
-  background: transparent;
-  color: #fff; border: 2px solid #fff; border-radius:2px;
-  font-size: 1em;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  padding: 12px 42px;
+  background: linear-gradient(90deg, #fa5a5a 0%, #3c4a6d 90%);
+  color: #fff; border: none; border-radius: 2px;
+  font-size: 1.13em; letter-spacing: 0.06em;
+  text-decoration: none; font-weight: 500;
+  box-shadow: 0 2px 12px #8005;
+  transition: background 0.2s, box-shadow 0.2s;
+  animation: fadeInDown 1.5s cubic-bezier(.64,.36,.03,1);
 }
 .hero-btn:hover {
-  background: #fff; color: #222;
+  background: linear-gradient(90deg, #3c4a6d 0%, #fa5a5a 90%);
+  color: #fff;
+  box-shadow: 0 3px 24px #fa5a5a33;
 }
+
+/* Section styling and animated border */
 .section {
-  margin: 60px auto;
+  margin: 70px auto 55px auto;
   background: #eaf0fa;
-  padding: 44px;
-  border-radius: 16px;
+  padding: 54px 30px;
+  border-radius: 20px;
   max-width: 1040px;
-  box-shadow: 0 3px 24px rgba(30,34,43,.07);
+  box-shadow: 0 8px 32px #1e222b13, 0 1px 12px #fa5a5a12;
+  border-left: 7px solid #fa5a5a77;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s, border-left 0.3s;
 }
 .section h2 {
-  font-size: 2em; letter-spacing: .04em; margin-bottom: 9px;
+  font-size: 2em; letter-spacing: .05em; margin-bottom: 11px;
   color: #1f2235;
   position: relative;
-  animation: fadeReveal 1.2s cubic-bezier(.77,.28,.36,.91) both;
+  text-transform: uppercase;
+  border-bottom: 2.2px solid #fa5a5a;
+  padding-bottom: 7px;
+  width: fit-content;
+  margin-left: 0;
+  animation: fadeReveal 1.18s cubic-bezier(.77,.28,.36,.91) both;
 }
 @keyframes fadeReveal {
-  0% {
-    opacity: 0;
-    letter-spacing: 0.25em;
-    transform: translateY(25px);
-  }
-  100% {
-    opacity: 1;
-    letter-spacing: .04em;
-    transform: translateY(0);
-  }
+  0% {opacity: 0; letter-spacing: 0.20em; transform: translateY(35px);}
+  100% {opacity: 1; letter-spacing: .05em; transform: translateY(0);}
 }
 .exp-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 29px;
+  margin-top: 18px;
 }
 .exp-grid > div {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px #3c4a6d13;
+  border-left: 4px solid #fa5a5a65;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
+  transition: box-shadow 0.2s, border-left 0.3s;
   animation: cardUp 1.1s ease forwards;
   animation-delay: 0.3s;
 }
-.exp-grid > div:nth-child(2) { animation-delay: 0.45s; }
-.exp-grid > div:nth-child(3) { animation-delay: 0.6s; }
-@keyframes cardUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.exp-grid > div:nth-child(2) { animation-delay: 0.55s; }
+.exp-grid > div:nth-child(3) { animation-delay: 0.7s; }
+.exp-grid > div.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
+.exp-grid > div:hover {
+  box-shadow: 0 6px 40px #fa5a5a22;
+  border-left: 7px solid #3c4a6d88;
+}
+@keyframes cardUp {
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Skills card with fade and scale */
 .skills-grid {
   display: flex;
-  flex-wrap: wrap; gap: 16px; font-size: 1.13em; margin-top: 16px;
+  flex-wrap: wrap;
+  gap: 17px; font-size: 1.15em; margin-top: 18px;
 }
 .skills-grid span {
-  background: #22223b;
-  color: #fff; padding: 12px 19px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px #2222;
-  animation: fadeReveal 1.5s;
+  background: linear-gradient(90deg, #fa5a5a70 0%, #3c4a6d 80%);
+  color: #fff; padding: 14px 26px;
+  border-radius: 9px;
+  box-shadow: 0 2px 12px #3c4a6d22;
+  font-size: 1.07em; font-weight: 500;
+  animation: fadeReveal 1.4s;
+  opacity: 0;
+  transform: scale(0.96) translateY(25px);
+  transition: box-shadow .16s, opacity .7s, transform .88s;
 }
+.skills-grid span.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  box-shadow: 0 6px 30px #fa5a5a33;
+}
+
+/* Quick ID styling */
 .contact-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 23px;
+  margin-top: 16px;
 }
-.quick-id { background: #3c4a6d; color: #fff; border-radius: 12px; padding: 32px;}
-.quick-id a { color: #fa5a5a; text-decoration: underline;}
-.contact-form { background: #eaf0fa; padding:32px; border-radius:12px;}
+.quick-id {
+  background: #3c4a6d;
+  color: #fff; border-radius: 15px; padding: 37px;
+  box-shadow: 0 2px 16px #3c4a6d29, 0 0 0 4px #fa5a5a22;
+  opacity: 0;
+  transform: translateY(35px) scale(.98);
+  transition: opacity .7s, box-shadow .2s, transform .9s;
+}
+.quick-id.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 0 6px 30px #fa5a5a33;
+}
+.quick-id a { color: #fa5a5a; text-decoration: underline; font-weight: 500;}
+.contact-form { background: #eaf0fa; padding:32px; border-radius:13px;}
 .contact-form input,
 .contact-form textarea {
   margin-bottom: 15px;
   padding: 10px; width: 47%; font-size: 1em;
-  border: 1px solid #3c4a6d; border-radius: 5px;
+  border: 1.5px solid #3c4a6d; border-radius: 5px;
 }
 .contact-form textarea { width: 100%; min-height: 68px; }
 .contact-form button {
   margin-top: 7px;
-  background: #fa5a5a; color: #fff;
-  border: none; padding: 12px 34px;
-  border-radius: 5px; font-size: 1.09em; cursor: pointer;
-  transition: box-shadow 0.2s;
+  background: linear-gradient(90deg, #fa5a5a 0%, #3c4a6d 100%);
+  color: #fff;
+  border: none; padding: 14px 38px;
+  border-radius: 6px; font-size: 1.13em; font-weight: 500; cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
 }
-.contact-form button:hover {
-  box-shadow: 0 3px 12px #fa5a5a66;
-}
+.contact-form button:hover { box-shadow: 0 5px 20px #fa5a5a66; background: #fa5a5a; }
+
+/* Chat button */
 .chat-btn {
-  position: fixed; bottom: 16px; right: 24px;
-  background: #fa5a5a;
-  color: #fff; font-size: 1.17em;
-  padding: 16px 38px; border-radius: 6px;
-  font-weight: bold; text-decoration: none; box-shadow: 0 2px 12px #8005;
-  animation: bounceIn 1 1.4s;
-  transition: box-shadow 0.2s, transform 0.2s;
+  position: fixed; bottom: 19px; right: 30px;
+  background: linear-gradient(90deg, #fa5a5a 0%, #3c4a6d 90%);
+  color: #fff; font-size: 1.18em;
+  padding: 17px 44px; border-radius: 9px;
+  font-weight: bold; text-decoration: none; box-shadow: 0 2px 18px #8005;
+  animation: bounceIn 1 1.28s;
+  transition: box-shadow 0.2s, transform 0.23s, background 0.2s;
 }
 @keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% {opacity: 0; transform: scale(0.6);}
+  60% {opacity: 1; transform: scale(1.15);}
+  100% {transform: scale(1);}
 }
 .chat-btn:hover {
-  box-shadow: 0 4px 18px #fa5a5a66;
-  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 7px 28px #fa5a5a88;
+  background: linear-gradient(270deg, #3c4a6d 0%, #fa5a5a 80%);
+  transform: translateY(-4px) scale(1.05);
 }
-@media (max-width:900px) {
-  .exp-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-}
-/* Animation for scroll reveal */
+
+/* Scroll reveal animation */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(40px) scale(0.98);
   transition: opacity 0.7s cubic-bezier(.77,.28,.36,.91), transform 0.8s cubic-bezier(.77,.28,.36,.91);
 }
-
 .scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-
-/* Apply the animation to inner elements as well */
 .section h2,
 .skills-grid span,
 .exp-grid > div,
@@ -206,3 +231,10 @@ nav a:hover {
   will-change: opacity, transform;
 }
 
+/* Responsive adjustments */
+@media (max-width:900px) {
+  .exp-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .section { padding: 25px 10px; }
+  .hero-content { padding-top: 50px; }
+}
