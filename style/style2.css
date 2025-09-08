@@ -185,3 +185,24 @@ nav a:hover {
   .exp-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+/* Animation for scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.7s cubic-bezier(.77,.28,.36,.91), transform 0.8s cubic-bezier(.77,.28,.36,.91);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Apply the animation to inner elements as well */
+.section h2,
+.skills-grid span,
+.exp-grid > div,
+.contact-form,
+.quick-id {
+  will-change: opacity, transform;
+}
+
